@@ -272,7 +272,7 @@
 }
 .card-container-xl {
     @include design-system.proportions(36rem, 46.8rem);
-    @include design-system.flex (flex, column, center, center);
+    @include design-system.flex (flex, column, start, start);
     &_image {
         padding-top: 1.6rem;
         .image-bottom-xl {

@@ -444,8 +444,8 @@
   height: 46.8rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
 }
 .card-container-xl_image {
   padding-top: 1.6rem;
@@ -679,6 +679,10 @@
   }
   .layout-container_module:nth-child(2) {
     grid-area: box2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: justify;
     width: 48.5rem;
     height: 58.133rem;
     border-right: 0.1rem solid hsl(0deg, 0%, 80%);
@@ -714,6 +718,7 @@
     width: 92rem;
     height: 4rem;
     border-bottom: 0.1rem solid hsl(0deg, 0%, 80%);
+    padding: 0.8rem 0rem;
   }
   .layout-container_module:nth-child(1) .title-general {
     font-weight: bold;
@@ -725,6 +730,10 @@
   }
   .layout-container_module:nth-child(2) {
     grid-area: box2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: justify;
     width: 60rem;
     height: 64.133rem;
     border-right: 0.1rem solid hsl(0deg, 0%, 80%);

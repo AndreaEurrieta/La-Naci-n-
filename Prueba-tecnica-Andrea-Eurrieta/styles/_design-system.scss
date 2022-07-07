@@ -1,0 +1,73 @@
+:root {
+    font-size: 62.5%;
+}
+$colors: (
+    font:(paragraph:(l20: hsl(0, 0%, 20%)),
+        title:(primary:hsl(0, 0%, 15%),
+            secondary:hsl(216, 98%, 40%),
+        ),
+    ),
+);
+$font-size: (
+    paragraph: (small: 1.2rem,
+        regular: 1.4rem,
+        large: 1.6rem,
+    ),
+    title: (small: 1.8rem,
+        regular: 2rem,
+        large: 3.2rem,
+    ),
+);
+$breakpoints: (
+    md: 768px,
+    lg: 1366px,
+);
+@mixin media-up($breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+@mixin flex ($dis, $direction, $just, $align) {
+    display: $dis;
+    flex-direction: $direction;
+    justify-content: $just;
+    align-items: $align;
+}
+@mixin grid ($width, $columns, $row-gap, $column-gap) {
+    display: grid;
+    width: $width;
+    grid-template-columns: repeat($columns, 1fr);
+    row-gap: $row-gap;
+    column-gap: $column-gap;
+}
+@mixin proportions ($width, $height) {
+    width: $width;
+    height: $height;
+}
+@mixin img ($width, $aspect) {
+    width: $width;
+    aspect-ratio: $aspect;
+
+}
+@mixin style-letter($weight, $align, $line-height, $font ) {
+    font-weight: $weight;
+    text-align: $align;
+    line-height: $line-height;
+    font-family: $font;
+}
+@mixin container-author ($position, $margin, $width, $height, $border) {
+    position: $position;
+    margin: $margin;
+    width: $width;
+    height: $height;
+    border: $border;
+}
+@mixin quote-separator ($height, $color, $width, $transform, $position, $bottom, $left) {
+    height: $height;
+    background-color: $color;
+    width: $width;
+    transform: $transform;
+    position: $position;
+    bottom: $bottom;
+    left: $left;
+}

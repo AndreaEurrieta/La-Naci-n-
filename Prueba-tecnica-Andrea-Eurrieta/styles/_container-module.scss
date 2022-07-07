@@ -1,0 +1,88 @@
+@use "cards";
+@use "design-system";
+@use "sass:map";
+
+.layout-container {
+    @include design-system.grid (36rem, 1, 1.6rem, 0rem);
+    grid-template-areas: "box1"
+        "box2"
+        "box3"
+        "box4";
+    &_module:nth-child(1) {
+        grid-area: box1;
+        @include design-system.flex (flex, column, center, left);
+        width: 32.8rem;
+        border-bottom: 0.1rem solid hsl(0, 0%, 80%);
+        padding: 1.6rem;
+        margin-left: 1.6rem;
+        .title-general {
+            @include design-system.style-letter(bold, left, 2.3rem, 'Roboto Slab');
+            color: map.get(design-system.$colors, "font", "title", "primary");
+            font-size: 2.4rem;
+        }
+    }
+    @include design-system.media-up(md) {
+        padding: 1.6rem 1.6rem;
+        @include design-system.grid (73.6rem, 3, 1.6, 1.6rem);
+        grid-template-areas: "box1 box1 box1"
+            "box2 box2 box3"
+            "box2 box2 box4 ";
+        &_module:nth-child(1) {
+            grid-area: box1;
+            @include design-system.flex (flex, column, flex-start, left);
+            width: 73.6rem;
+            border-bottom: 0.1rem solid hsl(0, 0%, 80%);
+            margin: 0rem 0rem;
+            .title-general {
+                @include design-system.style-letter(bold, left, 2.3rem, 'Roboto Slab');
+                color: map.get(design-system.$colors, "font", "title", "primary");
+                font-size: 2.4rem;
+            }
+        }
+        &_module:nth-child(2) {
+            grid-area: box2;
+            @include design-system.proportions (48.5rem, 58.133rem);
+            border-right: 0.1rem solid hsl(0, 0%, 80%);
+        }
+        &_module:nth-child(3) {
+            grid-area: box3;
+            @include design-system.proportions (25.1rem, 27.467rem);
+        }
+        &_module:nth-child(4) {
+            padding-top: 0rem;
+            grid-area: box4;
+            @include design-system.proportions (25.1rem, 27.467rem);
+        }
+    }
+    @include design-system.media-up(lg) {
+        padding: 10rem 22.3rem;
+        @include design-system.grid (92rem, 3, 1.6rem, 4rem);
+        grid-template-areas: "box1 box1 box1"
+            "box2 box2 box3"
+            "box2 box2 box4 ";
+        &_module:nth-child(1) {
+            grid-area: box1;
+            @include design-system.flex (flex, column, flex-start, left);
+            @include design-system.proportions (92rem, 4rem);
+            border-bottom: 0.1rem solid hsl(0, 0%, 80%);
+            .title-general {
+                @include design-system.style-letter(bold, left, 2.3rem, 'Roboto Slab');
+                color: map.get(design-system.$colors, "font", "title", "primary");
+                font-size: 2.4rem;
+            }
+        }
+        &_module:nth-child(2) {
+            grid-area: box2;
+            @include design-system.proportions (60rem, 64.133rem);
+            border-right: 0.1rem solid hsl(0, 0%, 80%);
+        }
+        &_module:nth-child(3) {
+            grid-area: box3;
+            @include design-system.proportions (29.067rem, 30.467rem);
+        }
+        &_module:nth-child(4) {
+            grid-area: box4;
+            @include design-system.proportions (29.067rem, 30.467rem);
+        }
+    }
+}
